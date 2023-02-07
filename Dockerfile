@@ -21,7 +21,7 @@
 # In order to enable the web-start functionality please run this image with
 # -v /var/run/docker.sock:/var/run/docker.sock
 
-FROM php:7.1-apache-jessie
+FROM arm64v8/php:7.4-apache-bullseye
 
 ARG BUILD_DATE="NULL"
 ARG VERSION="NULL"
@@ -33,7 +33,7 @@ LABEL org.label-schema.description="Web user interface for the CARMA Platform"
 LABEL org.label-schema.vendor="Leidos"
 LABEL org.label-schema.version=${VERSION}
 LABEL org.label-schema.url="https://highways.dot.gov/research/research-programs/operations/CARMA"
-LABEL org.label-schema.vcs-url="https://github.com/usdot-fhwa-stol/carma-web-ui/"
+LABEL org.label-schema.vcs-url="https://github.com/KBR-CARMA/carma-web-ui/"
 LABEL org.label-schema.vcs-ref=${VCS_REF}
 LABEL org.label-schema.build-date=${BUILD_DATE}
 
