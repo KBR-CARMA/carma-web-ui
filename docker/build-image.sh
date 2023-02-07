@@ -55,7 +55,7 @@ echo "Building docker image for $IMAGE version: $COMPONENT_VERSION_STRING"
 echo "Final image name: $USERNAME/$IMAGE:$COMPONENT_VERSION_STRING"
 
 cd ..
-    docker build --no-cache -t $USERNAME/$IMAGE:$COMPONENT_VERSION_STRING \
+    docker build --platform linux/arm64 --no-cache -t $USERNAME/$IMAGE:$COMPONENT_VERSION_STRING \
         --build-arg VERSION="$COMPONENT_VERSION_STRING" \
         --build-arg VCS_REF=`git rev-parse --short HEAD` \
         --build-arg BUILD_DATE=`date -u +”%Y-%m-%dT%H:%M:%SZ”` .
